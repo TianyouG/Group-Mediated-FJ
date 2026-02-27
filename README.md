@@ -35,26 +35,6 @@ Main executables:
   --csv out.csv
 ```
 
-## Quick Start 2: Real Data (Edge Lists)
-
-```bash
-./build_o3/run_experiments \
-  --input_mode data \
-  --method schur \
-  --schur_jacobi true \
-  --n_users 10000 \
-  --n_groups 5000 \
-  --bipartite data/ug.txt \
-  --user_graph data/user_graph.txt \
-  --group_graph data/group_graph.txt \
-  --su data/su.txt \
-  --sg data/sg.txt \
-  --data_one_indexed false \
-  --user_symmetrize true \
-  --group_symmetrize true \
-  --csv out.csv
-```
-
 ## Key Parameters
 
 Defaults below match `apps/run_experiments.cpp`.
@@ -80,12 +60,43 @@ Defaults below match `apps/run_experiments.cpp`.
 | `--full_system_jacobi` | `true` | Enable Jacobi preconditioning for `full_system` |
 | `--csv` | *(empty)* | If empty, prints to stdout only |
 
-## Input Format (Data Mode)
+## Input Format (Real-world Data Mode)
 
 - Graph files (`user_graph`, `group_graph`, `bipartite`): one line per edge
   - `u v` or `u v w`
 - Vector files (`su`, `sg`, `lambda_u`, `lambda_g`): one value per line
 - Lines starting with `#` or `%` are ignored
+
+## How to run on Real-world Data
+
+First, download the data from SNAP (Networks with ground-truth communities).
+Then, convert them into two-layer structure.
+This repository does not include preprocessing scripts or datasets; you need to prepare the following data-mode inputs yourself:
+
+- `bipartite` (required): user-group edge list with user IDs in `[0, n_users)` and group IDs in `[0, n_groups)`
+- `user_graph` (optional): user-user edge list with user IDs in `[0, n_users)`
+- `group_graph` (optional): group-group edge list with group IDs in `[0, n_groups)`
+- `su` / `sg` (optional but recommended): one value per line (see `Input Format (Data Mode)`)
+
+Finally, run the code as follows:
+
+```bash
+./build_o3/run_experiments \
+  --input_mode data \
+  --method schur \
+  --schur_jacobi true \
+  --n_users 10000 \
+  --n_groups 5000 \
+  --bipartite data/ug.txt \
+  --user_graph data/user_graph.txt \
+  --group_graph data/group_graph.txt \
+  --su data/su.txt \
+  --sg data/sg.txt \
+  --data_one_indexed false \
+  --user_symmetrize true \
+  --group_symmetrize true \
+  --csv out.csv
+```
 
 ## Help
 
