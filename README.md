@@ -32,7 +32,7 @@ Main executables:
   --n_users 1000000 \
   --n_groups 500000 \
   --seed 1 \
-  --csv out.csv
+  --csv result/out.csv
 ```
 
 ## Key Parameters
@@ -60,7 +60,7 @@ Defaults below match `apps/run_experiments.cpp`.
 | `--full_system_jacobi` | `true` | Enable Jacobi preconditioning for `full_system` |
 | `--csv` | *(empty)* | If empty, prints to stdout only |
 
-## Input Format (Real-world Data Mode)
+## Input Format (Data Mode)
 
 - Graph files (`user_graph`, `group_graph`, `bipartite`): one line per edge
   - `u v` or `u v w`
@@ -69,9 +69,9 @@ Defaults below match `apps/run_experiments.cpp`.
 
 ## How to run on Real-world Data
 
-First, download the data from SNAP (Networks with ground-truth communities).
-Then, convert them into two-layer structure.
-This repository does not include preprocessing scripts or datasets; you need to prepare the following data-mode inputs yourself:
+First, download a dataset from SNAP (Networks with Ground-Truth Communities).
+Then, convert it into the two-layer input format required by this code.
+This repository does not include preprocessing scripts or datasets, so you need to prepare the following inputs yourself:
 
 - `bipartite` (required): user-group edge list with user IDs in `[0, n_users)` and group IDs in `[0, n_groups)`
 - `user_graph` (optional): user-user edge list with user IDs in `[0, n_users)`
@@ -96,6 +96,46 @@ Finally, run the code as follows:
   --user_symmetrize true \
   --group_symmetrize true \
   --csv out.csv
+```
+
+### Examples: DBLP
+
+Method: Schur-PCG.
+```bash
+./build_o3/run_experiments \
+  --input_mode data \
+  --method schur \
+  --schur_jacobi true \
+  --n_users 317080 \
+  --n_groups 5136 \
+  --bipartite data/dblp/power/ug.txt \
+  --user_graph data/dblp/power/user_graph.txt \
+  --group_graph data/dblp/power/group_graph.txt \
+  --su data/dblp/power/su.txt \
+  --sg data/dblp/power/sg.txt \
+  --data_one_indexed false \
+  --user_symmetrize true \
+  --group_symmetrize true \
+  --csv result/dblp.csv
+```
+
+Method: Full-PCG.
+```bash
+./build_o3/run_experiments \
+  --input_mode data \
+  --method full_system \
+  --full_system_jacobi true \
+  --n_users 317080 \
+  --n_groups 5136 \
+  --bipartite data/dblp/power/ug.txt \
+  --user_graph data/dblp/power/user_graph.txt \
+  --group_graph data/dblp/power/group_graph.txt \
+  --su data/dblp/power/su.txt \
+  --sg data/dblp/power/sg.txt \
+  --data_one_indexed false \
+  --user_symmetrize true \
+  --group_symmetrize true \
+  --csv result/dblp_full.csv
 ```
 
 ## Help

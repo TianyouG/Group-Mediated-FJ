@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/precompute_cache.dir/apps/precompute_cache.cpp.o -o precompute_cache  libfjcore.a 
