@@ -1,6 +1,9 @@
 #include "fj/experiment/methods.hpp"
 
+#include <utility>
+
 #include "fj/common/timer.hpp"
+#include "fj/experiment/convergence_trace.hpp"
 #include "fj/io/precond_io.hpp"
 #include "fj/metrics/metrics.hpp"
 #include "fj/operators/agg_operator.hpp"
@@ -22,7 +25,8 @@ ExperimentResult RunSchurMethod(const ExperimentInstance& instance,
   Vector agg_diag = BuildAggDiagonal(instance);
 
   const bool group_has_edges = instance.group_graph.nnz() > 0;
-  CgSolver inner_cg(config.inner_max_iters, config.inner_tol);
+  const bool record_history = !config.trace_csv_path.empty();
+  CgSolver inner_cg(config.inner_max_iters, config.inner_tol, record_history);
   JacobiPreconditioner jacobi(agg_diag);
 
   DiagonalInnerSolver diag_inner(agg_diag);
@@ -35,19 +39,25 @@ ExperimentResult RunSchurMethod(const ExperimentInstance& instance,
 
   SchurComplementOperator S(Auu, instance.bipartite, inner);
 
+  // Eliminate the group block from both the matrix and the right-hand side:
+  // S x_u = b_u + W Agg^{-1} b_g.
+  Vector schur_rhs = instance.b_u;
+
   // Solve the outer system with CG.
-  CgSolver outer_cg(config.outer_max_iters, config.outer_tol);
+  CgSolver outer_cg(config.outer_max_iters, config.outer_tol, record_history);
   Vector x_u;
   JacobiPreconditioner schur_jacobi;
   const Preconditioner* outer_precond = nullptr;
   if (config.schur_use_jacobi) {
     Vector diag;
     if (!config.schur_precond_path.empty()) {
+      const PrecondMetadata metadata = PrecondIO::MakeMetadata(
+          instance.user_graph, instance.group_graph, instance.bipartite,
+          config.lambda_user, config.lambda_group, config.user_graph_scale,
+          config.group_graph_scale);
       diag = PrecondIO::ReadJacobiDiag(
           config.schur_precond_path, PrecondKind::kSchurJacobi,
-          instance.bipartite.num_users(), instance.bipartite.num_users(),
-          instance.bipartite.num_groups(), config.lambda_user,
-          config.lambda_group);
+          instance.bipartite.num_users(), metadata);
     } else {
       diag = BuildSchurJacobiDiagonal(instance);
     }
@@ -58,7 +68,14 @@ ExperimentResult RunSchurMethod(const ExperimentInstance& instance,
   }
   inner.ResetStats();
   Timer timer;
-  SolverStats stats = outer_cg.Solve(S, instance.b_u, x_u, outer_precond);
+  if (instance.b_g.squaredNorm() > 0.0) {
+    Vector group_response;
+    Vector user_correction;
+    inner.Solve(instance.b_g, group_response);
+    instance.bipartite.mul_W(group_response, user_correction);
+    schur_rhs += user_correction;
+  }
+  SolverStats stats = outer_cg.Solve(S, schur_rhs, x_u, outer_precond);
   const double elapsed = timer.ElapsedSeconds();
   InnerSolveStats inner_stats = inner.Stats();
 
@@ -74,6 +91,9 @@ ExperimentResult RunSchurMethod(const ExperimentInstance& instance,
   result.internal_conflict = InternalConflict(x_u, instance.s_u);
   result.polarization = Polarization(x_u);
   result.controversy = Controversy(x_u);
+  AppendSolverTrace("outer", 0, stats, result);
+  AppendInnerTrace(inner_stats, result);
+  result.x_u = std::move(x_u);
   return result;
 }
 

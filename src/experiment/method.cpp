@@ -29,6 +29,15 @@ Method ParseMethod(const std::string& name) {
       value == "fj") {
     return Method::FjDynamics;
   }
+  if (value == "bli") {
+    return Method::Bli;
+  }
+  if (value == "bli_sor" || value == "blisor" || value == "bli-sor") {
+    return Method::BliSor;
+  }
+  if (value == "pf_qe" || value == "pfqe" || value == "pf-qe") {
+    return Method::PfQe;
+  }
   throw std::invalid_argument("Unknown method: " + name);
 }
 
@@ -45,6 +54,12 @@ std::string ToString(Method method) {
       return "direct";
     case Method::FjDynamics:
       return "fj_dynamics";
+    case Method::Bli:
+      return "bli";
+    case Method::BliSor:
+      return "bli_sor";
+    case Method::PfQe:
+      return "pf_qe";
     default:
       return "unknown";
   }

@@ -1,6 +1,7 @@
 #include "fj/experiment/methods.hpp"
 
 #include <cmath>
+#include <utility>
 
 #include "fj/common/timer.hpp"
 #include "fj/experiment/residuals.hpp"
@@ -94,15 +95,21 @@ ExperimentResult RunFjDynamicsMethod(const ExperimentInstance& instance,
     b_norm = 1.0;
   }
 
+  ExperimentResult result;
   Timer timer;
   Index iterations = 0;
   double rel_res = 0.0;
   bool converged = false;
+  const bool record_history = !config.trace_csv_path.empty();
 
   for (Index iter = 0; iter < config.outer_max_iters; ++iter) {
     rel_res = ComputeRelativeResidual(denom_u, denom_g, instance.b_u,
                                       instance.b_g, x_u, x_g, instance, ax_u,
                                       ax_g, tmp_u, tmp_g, r_u, r_g, b_norm);
+    if (record_history) {
+      result.convergence_trace.push_back(
+          {"outer", 0, iterations, rel_res, timer.ElapsedSeconds()});
+    }
     if (rel_res <= config.outer_tol) {
       converged = true;
       break;
@@ -119,11 +126,14 @@ ExperimentResult RunFjDynamicsMethod(const ExperimentInstance& instance,
     rel_res = ComputeRelativeResidual(denom_u, denom_g, instance.b_u,
                                       instance.b_g, x_u, x_g, instance, ax_u,
                                       ax_g, tmp_u, tmp_g, r_u, r_g, b_norm);
+    if (record_history) {
+      result.convergence_trace.push_back(
+          {"outer", 0, iterations, rel_res, timer.ElapsedSeconds()});
+    }
   }
 
   const double elapsed = timer.ElapsedSeconds();
 
-  ExperimentResult result;
   result.method = config.method;
   result.tag = config.tag;
   result.outer_iters = iterations;
@@ -135,6 +145,7 @@ ExperimentResult RunFjDynamicsMethod(const ExperimentInstance& instance,
   result.internal_conflict = InternalConflict(x_u, instance.s_u);
   result.polarization = Polarization(x_u);
   result.controversy = Controversy(x_u);
+  result.x_u = std::move(x_u);
   return result;
 }
 

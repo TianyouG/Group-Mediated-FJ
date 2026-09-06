@@ -1,9 +1,11 @@
 #include "fj/experiment/methods.hpp"
 
 #include <stdexcept>
+#include <utility>
 #include <vector>
 
 #include "fj/common/timer.hpp"
+#include "fj/experiment/convergence_trace.hpp"
 #include "fj/metrics/metrics.hpp"
 #include "fj/operators/linear_operator.hpp"
 #include "fj/solver/cg_solver.hpp"
@@ -151,7 +153,8 @@ ExperimentResult RunCliqueMethod(const ExperimentInstance& instance,
                            instance.lambda_u, config.clique_use_weights);
 
   // Run CG on the user-only system.
-  CgSolver cg(config.outer_max_iters, config.outer_tol);
+  CgSolver cg(config.outer_max_iters, config.outer_tol,
+              !config.trace_csv_path.empty());
   Vector x_u;
   Timer timer;
   SolverStats stats = cg.Solve(A, instance.b_u, x_u, nullptr);
@@ -168,6 +171,8 @@ ExperimentResult RunCliqueMethod(const ExperimentInstance& instance,
   result.internal_conflict = InternalConflict(x_u, instance.s_u);
   result.polarization = Polarization(x_u);
   result.controversy = Controversy(x_u);
+  AppendSolverTrace("outer", 0, stats, result);
+  result.x_u = std::move(x_u);
   return result;
 }
 

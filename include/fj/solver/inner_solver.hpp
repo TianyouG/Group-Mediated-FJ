@@ -1,10 +1,19 @@
 #pragma once
 
+#include <vector>
+
 #include "fj/operators/linear_operator.hpp"
 #include "fj/preconditioner/preconditioner.hpp"
 #include "fj/solver/linear_solver.hpp"
 
 namespace fj {
+
+struct InnerResidualTracePoint {
+  Index solve_id = 0;
+  Index iteration = 0;
+  double relative_residual = 0.0;
+  double seconds = 0.0;
+};
 
 // Aggregated statistics for inner solves.
 struct InnerSolveStats {
@@ -14,6 +23,8 @@ struct InnerSolveStats {
   Index iterations = 0;
   // Total time across solves (seconds).
   double seconds = 0.0;
+  // Optional per-iteration histories for individual inner solves.
+  std::vector<InnerResidualTracePoint> residual_history;
 };
 
 class InnerSolver {

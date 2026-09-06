@@ -7,8 +7,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_library(fjcore
   src/baseline/clique_expansion.cpp
+  src/baseline/bli_solver.cpp
   src/baseline/direct_solver.cpp
+  src/baseline/pf_qe.cpp
   src/common/random.cpp
+  src/common/memory.cpp
   src/experiment/experiment_runner.cpp
   src/experiment/method.cpp
   src/experiment/method_schur.cpp
@@ -16,12 +19,16 @@ add_library(fjcore
   src/experiment/method_clique.cpp
   src/experiment/method_direct.cpp
   src/experiment/method_fj_dynamics.cpp
+  src/experiment/method_bli.cpp
+  src/experiment/method_bli_sor.cpp
+  src/experiment/method_pf_qe.cpp
   src/experiment/residuals.cpp
   src/generator/group_graph_generator.cpp
   src/generator/ug_generator.cpp
   src/generator/ws_generator.cpp
   src/graph/csr_graph.cpp
   src/graph/bipartite_csr.cpp
+  src/graph/bipartite_reverse_index.cpp
   src/metrics/metrics.cpp
   src/model/fj_problem.cpp
   src/operators/auu_operator.cpp
@@ -37,6 +44,7 @@ add_library(fjcore
   src/io/precond_io.cpp
   src/io/edge_list_reader.cpp
   src/io/vector_reader.cpp
+  src/io/vector_writer.cpp
 )
 
 target_include_directories(fjcore PUBLIC

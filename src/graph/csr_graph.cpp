@@ -1,5 +1,6 @@
 #include "fj/graph/csr_graph.hpp"
 
+#include <cmath>
 #include <numeric>
 #include <stdexcept>
 
@@ -159,6 +160,31 @@ void WeightedCsrGraph::EnsureDegree() const {
 double WeightedCsrGraph::total_weight() const {
   // Sum all stored edge weights.
   return std::accumulate(values_.begin(), values_.end(), 0.0);
+}
+
+void WeightedCsrGraph::ScaleWeights(Scalar factor) {
+  // Scale one graph layer without changing its topology unless it is disabled.
+  if (!std::isfinite(factor) || factor < 0.0) {
+    throw std::invalid_argument(
+        "graph weight scale must be finite and nonnegative");
+  }
+  if (factor == 1.0) {
+    return;
+  }
+  if (factor == 0.0) {
+    std::vector<Index>().swap(col_idx_);
+    std::vector<Scalar>().swap(values_);
+    row_ptr_.assign(static_cast<size_t>(n_ + 1), 0);
+    degree_.setZero(n_);
+    degree_ready_ = true;
+    return;
+  }
+  for (Scalar& value : values_) {
+    value *= factor;
+  }
+  if (degree_ready_) {
+    degree_ *= factor;
+  }
 }
 
 }  // namespace fj

@@ -39,10 +39,20 @@ double SchurRelativeResidual(const ExperimentInstance& instance,
 
   SchurComplementOperator S(Auu, instance.bipartite, inner);
 
+  // Use the reduced right-hand side produced by eliminating the group block.
+  Vector schur_rhs = instance.b_u;
+  if (instance.b_g.squaredNorm() > 0.0) {
+    Vector group_response;
+    Vector user_correction;
+    inner.Solve(instance.b_g, group_response);
+    instance.bipartite.mul_W(group_response, user_correction);
+    schur_rhs += user_correction;
+  }
+
   Vector Sx(n_users);
   S.Apply(x_u, Sx);
-  Vector r = instance.b_u - Sx;
-  double denom = instance.b_u.norm();
+  Vector r = schur_rhs - Sx;
+  double denom = schur_rhs.norm();
   if (denom == 0.0) {
     denom = 1.0;
   }

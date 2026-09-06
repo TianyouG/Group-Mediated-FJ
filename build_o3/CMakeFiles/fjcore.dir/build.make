@@ -83,10 +83,24 @@ CMakeFiles/fjcore.dir/src/baseline/clique_expansion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fjcore.dir/src/baseline/clique_expansion.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/GitHub/FJ-group/src/baseline/clique_expansion.cpp -o CMakeFiles/fjcore.dir/src/baseline/clique_expansion.cpp.s
 
+CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.o: CMakeFiles/fjcore.dir/flags.make
+CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.o: /mnt/e/GitHub/FJ-group/src/baseline/bli_solver.cpp
+CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.o -MF CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.o.d -o CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.o -c /mnt/e/GitHub/FJ-group/src/baseline/bli_solver.cpp
+
+CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/GitHub/FJ-group/src/baseline/bli_solver.cpp > CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.i
+
+CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/GitHub/FJ-group/src/baseline/bli_solver.cpp -o CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.s
+
 CMakeFiles/fjcore.dir/src/baseline/direct_solver.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/baseline/direct_solver.cpp.o: /mnt/e/GitHub/FJ-group/src/baseline/direct_solver.cpp
 CMakeFiles/fjcore.dir/src/baseline/direct_solver.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/fjcore.dir/src/baseline/direct_solver.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/fjcore.dir/src/baseline/direct_solver.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/baseline/direct_solver.cpp.o -MF CMakeFiles/fjcore.dir/src/baseline/direct_solver.cpp.o.d -o CMakeFiles/fjcore.dir/src/baseline/direct_solver.cpp.o -c /mnt/e/GitHub/FJ-group/src/baseline/direct_solver.cpp
 
 CMakeFiles/fjcore.dir/src/baseline/direct_solver.cpp.i: cmake_force
@@ -97,10 +111,24 @@ CMakeFiles/fjcore.dir/src/baseline/direct_solver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fjcore.dir/src/baseline/direct_solver.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/GitHub/FJ-group/src/baseline/direct_solver.cpp -o CMakeFiles/fjcore.dir/src/baseline/direct_solver.cpp.s
 
+CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.o: CMakeFiles/fjcore.dir/flags.make
+CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.o: /mnt/e/GitHub/FJ-group/src/baseline/pf_qe.cpp
+CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.o -MF CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.o.d -o CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.o -c /mnt/e/GitHub/FJ-group/src/baseline/pf_qe.cpp
+
+CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/GitHub/FJ-group/src/baseline/pf_qe.cpp > CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.i
+
+CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/GitHub/FJ-group/src/baseline/pf_qe.cpp -o CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.s
+
 CMakeFiles/fjcore.dir/src/common/random.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/common/random.cpp.o: /mnt/e/GitHub/FJ-group/src/common/random.cpp
 CMakeFiles/fjcore.dir/src/common/random.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/fjcore.dir/src/common/random.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/fjcore.dir/src/common/random.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/common/random.cpp.o -MF CMakeFiles/fjcore.dir/src/common/random.cpp.o.d -o CMakeFiles/fjcore.dir/src/common/random.cpp.o -c /mnt/e/GitHub/FJ-group/src/common/random.cpp
 
 CMakeFiles/fjcore.dir/src/common/random.cpp.i: cmake_force
@@ -111,10 +139,24 @@ CMakeFiles/fjcore.dir/src/common/random.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fjcore.dir/src/common/random.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/GitHub/FJ-group/src/common/random.cpp -o CMakeFiles/fjcore.dir/src/common/random.cpp.s
 
+CMakeFiles/fjcore.dir/src/common/memory.cpp.o: CMakeFiles/fjcore.dir/flags.make
+CMakeFiles/fjcore.dir/src/common/memory.cpp.o: /mnt/e/GitHub/FJ-group/src/common/memory.cpp
+CMakeFiles/fjcore.dir/src/common/memory.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/fjcore.dir/src/common/memory.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/common/memory.cpp.o -MF CMakeFiles/fjcore.dir/src/common/memory.cpp.o.d -o CMakeFiles/fjcore.dir/src/common/memory.cpp.o -c /mnt/e/GitHub/FJ-group/src/common/memory.cpp
+
+CMakeFiles/fjcore.dir/src/common/memory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fjcore.dir/src/common/memory.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/GitHub/FJ-group/src/common/memory.cpp > CMakeFiles/fjcore.dir/src/common/memory.cpp.i
+
+CMakeFiles/fjcore.dir/src/common/memory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fjcore.dir/src/common/memory.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/GitHub/FJ-group/src/common/memory.cpp -o CMakeFiles/fjcore.dir/src/common/memory.cpp.s
+
 CMakeFiles/fjcore.dir/src/experiment/experiment_runner.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/experiment/experiment_runner.cpp.o: /mnt/e/GitHub/FJ-group/src/experiment/experiment_runner.cpp
 CMakeFiles/fjcore.dir/src/experiment/experiment_runner.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/experiment_runner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/experiment_runner.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/experiment/experiment_runner.cpp.o -MF CMakeFiles/fjcore.dir/src/experiment/experiment_runner.cpp.o.d -o CMakeFiles/fjcore.dir/src/experiment/experiment_runner.cpp.o -c /mnt/e/GitHub/FJ-group/src/experiment/experiment_runner.cpp
 
 CMakeFiles/fjcore.dir/src/experiment/experiment_runner.cpp.i: cmake_force
@@ -128,7 +170,7 @@ CMakeFiles/fjcore.dir/src/experiment/experiment_runner.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/experiment/method.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/experiment/method.cpp.o: /mnt/e/GitHub/FJ-group/src/experiment/method.cpp
 CMakeFiles/fjcore.dir/src/experiment/method.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/experiment/method.cpp.o -MF CMakeFiles/fjcore.dir/src/experiment/method.cpp.o.d -o CMakeFiles/fjcore.dir/src/experiment/method.cpp.o -c /mnt/e/GitHub/FJ-group/src/experiment/method.cpp
 
 CMakeFiles/fjcore.dir/src/experiment/method.cpp.i: cmake_force
@@ -142,7 +184,7 @@ CMakeFiles/fjcore.dir/src/experiment/method.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/experiment/method_schur.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/experiment/method_schur.cpp.o: /mnt/e/GitHub/FJ-group/src/experiment/method_schur.cpp
 CMakeFiles/fjcore.dir/src/experiment/method_schur.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method_schur.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method_schur.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/experiment/method_schur.cpp.o -MF CMakeFiles/fjcore.dir/src/experiment/method_schur.cpp.o.d -o CMakeFiles/fjcore.dir/src/experiment/method_schur.cpp.o -c /mnt/e/GitHub/FJ-group/src/experiment/method_schur.cpp
 
 CMakeFiles/fjcore.dir/src/experiment/method_schur.cpp.i: cmake_force
@@ -156,7 +198,7 @@ CMakeFiles/fjcore.dir/src/experiment/method_schur.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/experiment/method_full_system.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/experiment/method_full_system.cpp.o: /mnt/e/GitHub/FJ-group/src/experiment/method_full_system.cpp
 CMakeFiles/fjcore.dir/src/experiment/method_full_system.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method_full_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method_full_system.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/experiment/method_full_system.cpp.o -MF CMakeFiles/fjcore.dir/src/experiment/method_full_system.cpp.o.d -o CMakeFiles/fjcore.dir/src/experiment/method_full_system.cpp.o -c /mnt/e/GitHub/FJ-group/src/experiment/method_full_system.cpp
 
 CMakeFiles/fjcore.dir/src/experiment/method_full_system.cpp.i: cmake_force
@@ -170,7 +212,7 @@ CMakeFiles/fjcore.dir/src/experiment/method_full_system.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/experiment/method_clique.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/experiment/method_clique.cpp.o: /mnt/e/GitHub/FJ-group/src/experiment/method_clique.cpp
 CMakeFiles/fjcore.dir/src/experiment/method_clique.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method_clique.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method_clique.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/experiment/method_clique.cpp.o -MF CMakeFiles/fjcore.dir/src/experiment/method_clique.cpp.o.d -o CMakeFiles/fjcore.dir/src/experiment/method_clique.cpp.o -c /mnt/e/GitHub/FJ-group/src/experiment/method_clique.cpp
 
 CMakeFiles/fjcore.dir/src/experiment/method_clique.cpp.i: cmake_force
@@ -184,7 +226,7 @@ CMakeFiles/fjcore.dir/src/experiment/method_clique.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/experiment/method_direct.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/experiment/method_direct.cpp.o: /mnt/e/GitHub/FJ-group/src/experiment/method_direct.cpp
 CMakeFiles/fjcore.dir/src/experiment/method_direct.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method_direct.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method_direct.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/experiment/method_direct.cpp.o -MF CMakeFiles/fjcore.dir/src/experiment/method_direct.cpp.o.d -o CMakeFiles/fjcore.dir/src/experiment/method_direct.cpp.o -c /mnt/e/GitHub/FJ-group/src/experiment/method_direct.cpp
 
 CMakeFiles/fjcore.dir/src/experiment/method_direct.cpp.i: cmake_force
@@ -198,7 +240,7 @@ CMakeFiles/fjcore.dir/src/experiment/method_direct.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/experiment/method_fj_dynamics.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/experiment/method_fj_dynamics.cpp.o: /mnt/e/GitHub/FJ-group/src/experiment/method_fj_dynamics.cpp
 CMakeFiles/fjcore.dir/src/experiment/method_fj_dynamics.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method_fj_dynamics.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method_fj_dynamics.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/experiment/method_fj_dynamics.cpp.o -MF CMakeFiles/fjcore.dir/src/experiment/method_fj_dynamics.cpp.o.d -o CMakeFiles/fjcore.dir/src/experiment/method_fj_dynamics.cpp.o -c /mnt/e/GitHub/FJ-group/src/experiment/method_fj_dynamics.cpp
 
 CMakeFiles/fjcore.dir/src/experiment/method_fj_dynamics.cpp.i: cmake_force
@@ -209,10 +251,52 @@ CMakeFiles/fjcore.dir/src/experiment/method_fj_dynamics.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fjcore.dir/src/experiment/method_fj_dynamics.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/GitHub/FJ-group/src/experiment/method_fj_dynamics.cpp -o CMakeFiles/fjcore.dir/src/experiment/method_fj_dynamics.cpp.s
 
+CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.o: CMakeFiles/fjcore.dir/flags.make
+CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.o: /mnt/e/GitHub/FJ-group/src/experiment/method_bli.cpp
+CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.o -MF CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.o.d -o CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.o -c /mnt/e/GitHub/FJ-group/src/experiment/method_bli.cpp
+
+CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/GitHub/FJ-group/src/experiment/method_bli.cpp > CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.i
+
+CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/GitHub/FJ-group/src/experiment/method_bli.cpp -o CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.s
+
+CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.o: CMakeFiles/fjcore.dir/flags.make
+CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.o: /mnt/e/GitHub/FJ-group/src/experiment/method_bli_sor.cpp
+CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.o -MF CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.o.d -o CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.o -c /mnt/e/GitHub/FJ-group/src/experiment/method_bli_sor.cpp
+
+CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/GitHub/FJ-group/src/experiment/method_bli_sor.cpp > CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.i
+
+CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/GitHub/FJ-group/src/experiment/method_bli_sor.cpp -o CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.s
+
+CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.o: CMakeFiles/fjcore.dir/flags.make
+CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.o: /mnt/e/GitHub/FJ-group/src/experiment/method_pf_qe.cpp
+CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.o -MF CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.o.d -o CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.o -c /mnt/e/GitHub/FJ-group/src/experiment/method_pf_qe.cpp
+
+CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/GitHub/FJ-group/src/experiment/method_pf_qe.cpp > CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.i
+
+CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/GitHub/FJ-group/src/experiment/method_pf_qe.cpp -o CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.s
+
 CMakeFiles/fjcore.dir/src/experiment/residuals.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/experiment/residuals.cpp.o: /mnt/e/GitHub/FJ-group/src/experiment/residuals.cpp
 CMakeFiles/fjcore.dir/src/experiment/residuals.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/residuals.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/fjcore.dir/src/experiment/residuals.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/experiment/residuals.cpp.o -MF CMakeFiles/fjcore.dir/src/experiment/residuals.cpp.o.d -o CMakeFiles/fjcore.dir/src/experiment/residuals.cpp.o -c /mnt/e/GitHub/FJ-group/src/experiment/residuals.cpp
 
 CMakeFiles/fjcore.dir/src/experiment/residuals.cpp.i: cmake_force
@@ -226,7 +310,7 @@ CMakeFiles/fjcore.dir/src/experiment/residuals.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/generator/group_graph_generator.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/generator/group_graph_generator.cpp.o: /mnt/e/GitHub/FJ-group/src/generator/group_graph_generator.cpp
 CMakeFiles/fjcore.dir/src/generator/group_graph_generator.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/fjcore.dir/src/generator/group_graph_generator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/fjcore.dir/src/generator/group_graph_generator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/generator/group_graph_generator.cpp.o -MF CMakeFiles/fjcore.dir/src/generator/group_graph_generator.cpp.o.d -o CMakeFiles/fjcore.dir/src/generator/group_graph_generator.cpp.o -c /mnt/e/GitHub/FJ-group/src/generator/group_graph_generator.cpp
 
 CMakeFiles/fjcore.dir/src/generator/group_graph_generator.cpp.i: cmake_force
@@ -240,7 +324,7 @@ CMakeFiles/fjcore.dir/src/generator/group_graph_generator.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/generator/ug_generator.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/generator/ug_generator.cpp.o: /mnt/e/GitHub/FJ-group/src/generator/ug_generator.cpp
 CMakeFiles/fjcore.dir/src/generator/ug_generator.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/fjcore.dir/src/generator/ug_generator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/fjcore.dir/src/generator/ug_generator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/generator/ug_generator.cpp.o -MF CMakeFiles/fjcore.dir/src/generator/ug_generator.cpp.o.d -o CMakeFiles/fjcore.dir/src/generator/ug_generator.cpp.o -c /mnt/e/GitHub/FJ-group/src/generator/ug_generator.cpp
 
 CMakeFiles/fjcore.dir/src/generator/ug_generator.cpp.i: cmake_force
@@ -254,7 +338,7 @@ CMakeFiles/fjcore.dir/src/generator/ug_generator.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/generator/ws_generator.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/generator/ws_generator.cpp.o: /mnt/e/GitHub/FJ-group/src/generator/ws_generator.cpp
 CMakeFiles/fjcore.dir/src/generator/ws_generator.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/fjcore.dir/src/generator/ws_generator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/fjcore.dir/src/generator/ws_generator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/generator/ws_generator.cpp.o -MF CMakeFiles/fjcore.dir/src/generator/ws_generator.cpp.o.d -o CMakeFiles/fjcore.dir/src/generator/ws_generator.cpp.o -c /mnt/e/GitHub/FJ-group/src/generator/ws_generator.cpp
 
 CMakeFiles/fjcore.dir/src/generator/ws_generator.cpp.i: cmake_force
@@ -268,7 +352,7 @@ CMakeFiles/fjcore.dir/src/generator/ws_generator.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/graph/csr_graph.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/graph/csr_graph.cpp.o: /mnt/e/GitHub/FJ-group/src/graph/csr_graph.cpp
 CMakeFiles/fjcore.dir/src/graph/csr_graph.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/fjcore.dir/src/graph/csr_graph.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/fjcore.dir/src/graph/csr_graph.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/graph/csr_graph.cpp.o -MF CMakeFiles/fjcore.dir/src/graph/csr_graph.cpp.o.d -o CMakeFiles/fjcore.dir/src/graph/csr_graph.cpp.o -c /mnt/e/GitHub/FJ-group/src/graph/csr_graph.cpp
 
 CMakeFiles/fjcore.dir/src/graph/csr_graph.cpp.i: cmake_force
@@ -282,7 +366,7 @@ CMakeFiles/fjcore.dir/src/graph/csr_graph.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/graph/bipartite_csr.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/graph/bipartite_csr.cpp.o: /mnt/e/GitHub/FJ-group/src/graph/bipartite_csr.cpp
 CMakeFiles/fjcore.dir/src/graph/bipartite_csr.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/fjcore.dir/src/graph/bipartite_csr.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/fjcore.dir/src/graph/bipartite_csr.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/graph/bipartite_csr.cpp.o -MF CMakeFiles/fjcore.dir/src/graph/bipartite_csr.cpp.o.d -o CMakeFiles/fjcore.dir/src/graph/bipartite_csr.cpp.o -c /mnt/e/GitHub/FJ-group/src/graph/bipartite_csr.cpp
 
 CMakeFiles/fjcore.dir/src/graph/bipartite_csr.cpp.i: cmake_force
@@ -293,10 +377,24 @@ CMakeFiles/fjcore.dir/src/graph/bipartite_csr.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fjcore.dir/src/graph/bipartite_csr.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/GitHub/FJ-group/src/graph/bipartite_csr.cpp -o CMakeFiles/fjcore.dir/src/graph/bipartite_csr.cpp.s
 
+CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.o: CMakeFiles/fjcore.dir/flags.make
+CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.o: /mnt/e/GitHub/FJ-group/src/graph/bipartite_reverse_index.cpp
+CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.o -MF CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.o.d -o CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.o -c /mnt/e/GitHub/FJ-group/src/graph/bipartite_reverse_index.cpp
+
+CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/GitHub/FJ-group/src/graph/bipartite_reverse_index.cpp > CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.i
+
+CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/GitHub/FJ-group/src/graph/bipartite_reverse_index.cpp -o CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.s
+
 CMakeFiles/fjcore.dir/src/metrics/metrics.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/metrics/metrics.cpp.o: /mnt/e/GitHub/FJ-group/src/metrics/metrics.cpp
 CMakeFiles/fjcore.dir/src/metrics/metrics.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/fjcore.dir/src/metrics/metrics.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/fjcore.dir/src/metrics/metrics.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/metrics/metrics.cpp.o -MF CMakeFiles/fjcore.dir/src/metrics/metrics.cpp.o.d -o CMakeFiles/fjcore.dir/src/metrics/metrics.cpp.o -c /mnt/e/GitHub/FJ-group/src/metrics/metrics.cpp
 
 CMakeFiles/fjcore.dir/src/metrics/metrics.cpp.i: cmake_force
@@ -310,7 +408,7 @@ CMakeFiles/fjcore.dir/src/metrics/metrics.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/model/fj_problem.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/model/fj_problem.cpp.o: /mnt/e/GitHub/FJ-group/src/model/fj_problem.cpp
 CMakeFiles/fjcore.dir/src/model/fj_problem.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/fjcore.dir/src/model/fj_problem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/fjcore.dir/src/model/fj_problem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/model/fj_problem.cpp.o -MF CMakeFiles/fjcore.dir/src/model/fj_problem.cpp.o.d -o CMakeFiles/fjcore.dir/src/model/fj_problem.cpp.o -c /mnt/e/GitHub/FJ-group/src/model/fj_problem.cpp
 
 CMakeFiles/fjcore.dir/src/model/fj_problem.cpp.i: cmake_force
@@ -324,7 +422,7 @@ CMakeFiles/fjcore.dir/src/model/fj_problem.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/operators/auu_operator.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/operators/auu_operator.cpp.o: /mnt/e/GitHub/FJ-group/src/operators/auu_operator.cpp
 CMakeFiles/fjcore.dir/src/operators/auu_operator.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/fjcore.dir/src/operators/auu_operator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/fjcore.dir/src/operators/auu_operator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/operators/auu_operator.cpp.o -MF CMakeFiles/fjcore.dir/src/operators/auu_operator.cpp.o.d -o CMakeFiles/fjcore.dir/src/operators/auu_operator.cpp.o -c /mnt/e/GitHub/FJ-group/src/operators/auu_operator.cpp
 
 CMakeFiles/fjcore.dir/src/operators/auu_operator.cpp.i: cmake_force
@@ -338,7 +436,7 @@ CMakeFiles/fjcore.dir/src/operators/auu_operator.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/operators/agg_operator.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/operators/agg_operator.cpp.o: /mnt/e/GitHub/FJ-group/src/operators/agg_operator.cpp
 CMakeFiles/fjcore.dir/src/operators/agg_operator.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/fjcore.dir/src/operators/agg_operator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/fjcore.dir/src/operators/agg_operator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/operators/agg_operator.cpp.o -MF CMakeFiles/fjcore.dir/src/operators/agg_operator.cpp.o.d -o CMakeFiles/fjcore.dir/src/operators/agg_operator.cpp.o -c /mnt/e/GitHub/FJ-group/src/operators/agg_operator.cpp
 
 CMakeFiles/fjcore.dir/src/operators/agg_operator.cpp.i: cmake_force
@@ -352,7 +450,7 @@ CMakeFiles/fjcore.dir/src/operators/agg_operator.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/operators/full_system_operator.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/operators/full_system_operator.cpp.o: /mnt/e/GitHub/FJ-group/src/operators/full_system_operator.cpp
 CMakeFiles/fjcore.dir/src/operators/full_system_operator.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/fjcore.dir/src/operators/full_system_operator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/fjcore.dir/src/operators/full_system_operator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/operators/full_system_operator.cpp.o -MF CMakeFiles/fjcore.dir/src/operators/full_system_operator.cpp.o.d -o CMakeFiles/fjcore.dir/src/operators/full_system_operator.cpp.o -c /mnt/e/GitHub/FJ-group/src/operators/full_system_operator.cpp
 
 CMakeFiles/fjcore.dir/src/operators/full_system_operator.cpp.i: cmake_force
@@ -366,7 +464,7 @@ CMakeFiles/fjcore.dir/src/operators/full_system_operator.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/operators/schur_operator.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/operators/schur_operator.cpp.o: /mnt/e/GitHub/FJ-group/src/operators/schur_operator.cpp
 CMakeFiles/fjcore.dir/src/operators/schur_operator.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/fjcore.dir/src/operators/schur_operator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/fjcore.dir/src/operators/schur_operator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/operators/schur_operator.cpp.o -MF CMakeFiles/fjcore.dir/src/operators/schur_operator.cpp.o.d -o CMakeFiles/fjcore.dir/src/operators/schur_operator.cpp.o -c /mnt/e/GitHub/FJ-group/src/operators/schur_operator.cpp
 
 CMakeFiles/fjcore.dir/src/operators/schur_operator.cpp.i: cmake_force
@@ -380,7 +478,7 @@ CMakeFiles/fjcore.dir/src/operators/schur_operator.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/preconditioner/jacobi_preconditioner.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/preconditioner/jacobi_preconditioner.cpp.o: /mnt/e/GitHub/FJ-group/src/preconditioner/jacobi_preconditioner.cpp
 CMakeFiles/fjcore.dir/src/preconditioner/jacobi_preconditioner.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/fjcore.dir/src/preconditioner/jacobi_preconditioner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/fjcore.dir/src/preconditioner/jacobi_preconditioner.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/preconditioner/jacobi_preconditioner.cpp.o -MF CMakeFiles/fjcore.dir/src/preconditioner/jacobi_preconditioner.cpp.o.d -o CMakeFiles/fjcore.dir/src/preconditioner/jacobi_preconditioner.cpp.o -c /mnt/e/GitHub/FJ-group/src/preconditioner/jacobi_preconditioner.cpp
 
 CMakeFiles/fjcore.dir/src/preconditioner/jacobi_preconditioner.cpp.i: cmake_force
@@ -394,7 +492,7 @@ CMakeFiles/fjcore.dir/src/preconditioner/jacobi_preconditioner.cpp.s: cmake_forc
 CMakeFiles/fjcore.dir/src/preconditioner/precond_builder.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/preconditioner/precond_builder.cpp.o: /mnt/e/GitHub/FJ-group/src/preconditioner/precond_builder.cpp
 CMakeFiles/fjcore.dir/src/preconditioner/precond_builder.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/fjcore.dir/src/preconditioner/precond_builder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/fjcore.dir/src/preconditioner/precond_builder.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/preconditioner/precond_builder.cpp.o -MF CMakeFiles/fjcore.dir/src/preconditioner/precond_builder.cpp.o.d -o CMakeFiles/fjcore.dir/src/preconditioner/precond_builder.cpp.o -c /mnt/e/GitHub/FJ-group/src/preconditioner/precond_builder.cpp
 
 CMakeFiles/fjcore.dir/src/preconditioner/precond_builder.cpp.i: cmake_force
@@ -408,7 +506,7 @@ CMakeFiles/fjcore.dir/src/preconditioner/precond_builder.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/solver/cg_solver.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/solver/cg_solver.cpp.o: /mnt/e/GitHub/FJ-group/src/solver/cg_solver.cpp
 CMakeFiles/fjcore.dir/src/solver/cg_solver.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/fjcore.dir/src/solver/cg_solver.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/fjcore.dir/src/solver/cg_solver.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/solver/cg_solver.cpp.o -MF CMakeFiles/fjcore.dir/src/solver/cg_solver.cpp.o.d -o CMakeFiles/fjcore.dir/src/solver/cg_solver.cpp.o -c /mnt/e/GitHub/FJ-group/src/solver/cg_solver.cpp
 
 CMakeFiles/fjcore.dir/src/solver/cg_solver.cpp.i: cmake_force
@@ -422,7 +520,7 @@ CMakeFiles/fjcore.dir/src/solver/cg_solver.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/solver/inner_solver.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/solver/inner_solver.cpp.o: /mnt/e/GitHub/FJ-group/src/solver/inner_solver.cpp
 CMakeFiles/fjcore.dir/src/solver/inner_solver.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/fjcore.dir/src/solver/inner_solver.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/fjcore.dir/src/solver/inner_solver.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/solver/inner_solver.cpp.o -MF CMakeFiles/fjcore.dir/src/solver/inner_solver.cpp.o.d -o CMakeFiles/fjcore.dir/src/solver/inner_solver.cpp.o -c /mnt/e/GitHub/FJ-group/src/solver/inner_solver.cpp
 
 CMakeFiles/fjcore.dir/src/solver/inner_solver.cpp.i: cmake_force
@@ -436,7 +534,7 @@ CMakeFiles/fjcore.dir/src/solver/inner_solver.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/io/csv_writer.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/io/csv_writer.cpp.o: /mnt/e/GitHub/FJ-group/src/io/csv_writer.cpp
 CMakeFiles/fjcore.dir/src/io/csv_writer.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/fjcore.dir/src/io/csv_writer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/fjcore.dir/src/io/csv_writer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/io/csv_writer.cpp.o -MF CMakeFiles/fjcore.dir/src/io/csv_writer.cpp.o.d -o CMakeFiles/fjcore.dir/src/io/csv_writer.cpp.o -c /mnt/e/GitHub/FJ-group/src/io/csv_writer.cpp
 
 CMakeFiles/fjcore.dir/src/io/csv_writer.cpp.i: cmake_force
@@ -450,7 +548,7 @@ CMakeFiles/fjcore.dir/src/io/csv_writer.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/io/binary_csr_io.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/io/binary_csr_io.cpp.o: /mnt/e/GitHub/FJ-group/src/io/binary_csr_io.cpp
 CMakeFiles/fjcore.dir/src/io/binary_csr_io.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/fjcore.dir/src/io/binary_csr_io.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/fjcore.dir/src/io/binary_csr_io.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/io/binary_csr_io.cpp.o -MF CMakeFiles/fjcore.dir/src/io/binary_csr_io.cpp.o.d -o CMakeFiles/fjcore.dir/src/io/binary_csr_io.cpp.o -c /mnt/e/GitHub/FJ-group/src/io/binary_csr_io.cpp
 
 CMakeFiles/fjcore.dir/src/io/binary_csr_io.cpp.i: cmake_force
@@ -464,7 +562,7 @@ CMakeFiles/fjcore.dir/src/io/binary_csr_io.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/io/precond_io.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/io/precond_io.cpp.o: /mnt/e/GitHub/FJ-group/src/io/precond_io.cpp
 CMakeFiles/fjcore.dir/src/io/precond_io.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/fjcore.dir/src/io/precond_io.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/fjcore.dir/src/io/precond_io.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/io/precond_io.cpp.o -MF CMakeFiles/fjcore.dir/src/io/precond_io.cpp.o.d -o CMakeFiles/fjcore.dir/src/io/precond_io.cpp.o -c /mnt/e/GitHub/FJ-group/src/io/precond_io.cpp
 
 CMakeFiles/fjcore.dir/src/io/precond_io.cpp.i: cmake_force
@@ -478,7 +576,7 @@ CMakeFiles/fjcore.dir/src/io/precond_io.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/io/edge_list_reader.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/io/edge_list_reader.cpp.o: /mnt/e/GitHub/FJ-group/src/io/edge_list_reader.cpp
 CMakeFiles/fjcore.dir/src/io/edge_list_reader.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/fjcore.dir/src/io/edge_list_reader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/fjcore.dir/src/io/edge_list_reader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/io/edge_list_reader.cpp.o -MF CMakeFiles/fjcore.dir/src/io/edge_list_reader.cpp.o.d -o CMakeFiles/fjcore.dir/src/io/edge_list_reader.cpp.o -c /mnt/e/GitHub/FJ-group/src/io/edge_list_reader.cpp
 
 CMakeFiles/fjcore.dir/src/io/edge_list_reader.cpp.i: cmake_force
@@ -492,7 +590,7 @@ CMakeFiles/fjcore.dir/src/io/edge_list_reader.cpp.s: cmake_force
 CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.o: CMakeFiles/fjcore.dir/flags.make
 CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.o: /mnt/e/GitHub/FJ-group/src/io/vector_reader.cpp
 CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.o -MF CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.o.d -o CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.o -c /mnt/e/GitHub/FJ-group/src/io/vector_reader.cpp
 
 CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.i: cmake_force
@@ -503,11 +601,28 @@ CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/GitHub/FJ-group/src/io/vector_reader.cpp -o CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.s
 
+CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.o: CMakeFiles/fjcore.dir/flags.make
+CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.o: /mnt/e/GitHub/FJ-group/src/io/vector_writer.cpp
+CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.o: CMakeFiles/fjcore.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.o -MF CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.o.d -o CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.o -c /mnt/e/GitHub/FJ-group/src/io/vector_writer.cpp
+
+CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/GitHub/FJ-group/src/io/vector_writer.cpp > CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.i
+
+CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/GitHub/FJ-group/src/io/vector_writer.cpp -o CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.s
+
 # Object files for target fjcore
 fjcore_OBJECTS = \
 "CMakeFiles/fjcore.dir/src/baseline/clique_expansion.cpp.o" \
+"CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.o" \
 "CMakeFiles/fjcore.dir/src/baseline/direct_solver.cpp.o" \
+"CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.o" \
 "CMakeFiles/fjcore.dir/src/common/random.cpp.o" \
+"CMakeFiles/fjcore.dir/src/common/memory.cpp.o" \
 "CMakeFiles/fjcore.dir/src/experiment/experiment_runner.cpp.o" \
 "CMakeFiles/fjcore.dir/src/experiment/method.cpp.o" \
 "CMakeFiles/fjcore.dir/src/experiment/method_schur.cpp.o" \
@@ -515,12 +630,16 @@ fjcore_OBJECTS = \
 "CMakeFiles/fjcore.dir/src/experiment/method_clique.cpp.o" \
 "CMakeFiles/fjcore.dir/src/experiment/method_direct.cpp.o" \
 "CMakeFiles/fjcore.dir/src/experiment/method_fj_dynamics.cpp.o" \
+"CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.o" \
+"CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.o" \
+"CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.o" \
 "CMakeFiles/fjcore.dir/src/experiment/residuals.cpp.o" \
 "CMakeFiles/fjcore.dir/src/generator/group_graph_generator.cpp.o" \
 "CMakeFiles/fjcore.dir/src/generator/ug_generator.cpp.o" \
 "CMakeFiles/fjcore.dir/src/generator/ws_generator.cpp.o" \
 "CMakeFiles/fjcore.dir/src/graph/csr_graph.cpp.o" \
 "CMakeFiles/fjcore.dir/src/graph/bipartite_csr.cpp.o" \
+"CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.o" \
 "CMakeFiles/fjcore.dir/src/metrics/metrics.cpp.o" \
 "CMakeFiles/fjcore.dir/src/model/fj_problem.cpp.o" \
 "CMakeFiles/fjcore.dir/src/operators/auu_operator.cpp.o" \
@@ -535,14 +654,18 @@ fjcore_OBJECTS = \
 "CMakeFiles/fjcore.dir/src/io/binary_csr_io.cpp.o" \
 "CMakeFiles/fjcore.dir/src/io/precond_io.cpp.o" \
 "CMakeFiles/fjcore.dir/src/io/edge_list_reader.cpp.o" \
-"CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.o"
+"CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.o" \
+"CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.o"
 
 # External object files for target fjcore
 fjcore_EXTERNAL_OBJECTS =
 
 libfjcore.a: CMakeFiles/fjcore.dir/src/baseline/clique_expansion.cpp.o
+libfjcore.a: CMakeFiles/fjcore.dir/src/baseline/bli_solver.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/baseline/direct_solver.cpp.o
+libfjcore.a: CMakeFiles/fjcore.dir/src/baseline/pf_qe.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/common/random.cpp.o
+libfjcore.a: CMakeFiles/fjcore.dir/src/common/memory.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/experiment/experiment_runner.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/experiment/method.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/experiment/method_schur.cpp.o
@@ -550,12 +673,16 @@ libfjcore.a: CMakeFiles/fjcore.dir/src/experiment/method_full_system.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/experiment/method_clique.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/experiment/method_direct.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/experiment/method_fj_dynamics.cpp.o
+libfjcore.a: CMakeFiles/fjcore.dir/src/experiment/method_bli.cpp.o
+libfjcore.a: CMakeFiles/fjcore.dir/src/experiment/method_bli_sor.cpp.o
+libfjcore.a: CMakeFiles/fjcore.dir/src/experiment/method_pf_qe.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/experiment/residuals.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/generator/group_graph_generator.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/generator/ug_generator.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/generator/ws_generator.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/graph/csr_graph.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/graph/bipartite_csr.cpp.o
+libfjcore.a: CMakeFiles/fjcore.dir/src/graph/bipartite_reverse_index.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/metrics/metrics.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/model/fj_problem.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/operators/auu_operator.cpp.o
@@ -571,9 +698,10 @@ libfjcore.a: CMakeFiles/fjcore.dir/src/io/binary_csr_io.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/io/precond_io.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/io/edge_list_reader.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/src/io/vector_reader.cpp.o
+libfjcore.a: CMakeFiles/fjcore.dir/src/io/vector_writer.cpp.o
 libfjcore.a: CMakeFiles/fjcore.dir/build.make
 libfjcore.a: CMakeFiles/fjcore.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Linking CXX static library libfjcore.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/e/GitHub/FJ-group/build_o3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Linking CXX static library libfjcore.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/fjcore.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fjcore.dir/link.txt --verbose=$(VERBOSE)
 

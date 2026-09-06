@@ -1,6 +1,7 @@
 #include "fj/experiment/methods.hpp"
 
 #include <stdexcept>
+#include <utility>
 
 #include "fj/baseline/direct_solver.hpp"
 #include "fj/common/timer.hpp"
@@ -49,6 +50,7 @@ ExperimentResult RunDirectMethod(const ExperimentInstance& instance,
   result.internal_conflict = InternalConflict(x_u, instance.s_u);
   result.polarization = Polarization(x_u);
   result.controversy = Controversy(x_u);
+  result.x_u = std::move(x_u);
   return result;
 }
 

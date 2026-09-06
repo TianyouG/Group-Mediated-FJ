@@ -2,11 +2,13 @@
 
 #include <algorithm>
 #include <cmath>
+#include <limits>
 #include <random>
-#include <string>
 #include <stdexcept>
+#include <string>
 #include <vector>
 
+#include "fj/common/memory.hpp"
 #include "fj/experiment/experiment_instance.hpp"
 #include "fj/experiment/methods.hpp"
 #include "fj/generator/group_graph_generator.hpp"
@@ -30,6 +32,37 @@ void ValidateConfig(const ExperimentConfig& cfg) {
   if (cfg.user_graph_weight != -1.0 && cfg.user_graph_weight <= 0.0) {
     throw std::invalid_argument("ExperimentConfig user_graph_weight must be "
                                 "positive or -1 for auto");
+  }
+  if (!std::isfinite(cfg.user_graph_scale) || cfg.user_graph_scale < 0.0 ||
+      !std::isfinite(cfg.group_graph_scale) || cfg.group_graph_scale < 0.0) {
+    throw std::invalid_argument(
+        "ExperimentConfig graph scales must be finite and nonnegative");
+  }
+  if (!cfg.use_real_data &&
+      (cfg.user_graph_scale != 1.0 || cfg.group_graph_scale != 1.0)) {
+    throw std::invalid_argument(
+        "user_graph_scale/group_graph_scale are only supported in data mode");
+  }
+  if (cfg.outer_max_iters <= 0 || cfg.outer_tol <= 0.0) {
+    throw std::invalid_argument(
+        "ExperimentConfig outer iteration controls must be positive");
+  }
+  if (cfg.bli_max_updates < 0) {
+    throw std::invalid_argument(
+        "ExperimentConfig bli_max_updates must be nonnegative");
+  }
+  if (!(cfg.bli_omega > 0.0 && cfg.bli_omega < 2.0)) {
+    throw std::invalid_argument("ExperimentConfig bli_omega must be in (0, 2)");
+  }
+  if (cfg.pf_sample_users <= 0 || cfg.pf_sample_edges < 0 ||
+      cfg.pf_forest_samples <= 0 || cfg.pf_max_walk_steps <= 0) {
+    throw std::invalid_argument(
+        "ExperimentConfig PF-QE sampling controls are invalid");
+  }
+  if (cfg.method == Method::PfQe &&
+      (!cfg.reference_xu_path.empty() || !cfg.save_xu_path.empty())) {
+    throw std::invalid_argument(
+        "PF-QE does not produce a complete user opinion vector");
   }
   if (cfg.use_real_data) {
     if (cfg.bipartite_path.empty() && cfg.bipartite_bin_path.empty()) {
@@ -269,6 +302,63 @@ void FillDiagnostics(const ExperimentInstance& instance,
   result.user_graph_degree_max = MaxOrZero(user_graph_deg);
   result.group_graph_degree_mean = MeanOrZero(group_graph_deg);
   result.group_graph_degree_max = MaxOrZero(group_graph_deg);
+
+  // The Jacobi-scaled inner operator has the bound
+  // kappa <= (1 + alpha) / (1 - alpha), where alpha is the largest
+  // group-layer degree fraction.
+  double alpha_max = 0.0;
+  for (Index group = 0; group < group_graph_deg.size(); ++group) {
+    const double denominator = group_graph_deg[group] + group_cross[group] +
+                               instance.lambda_g[group];
+    if (denominator > 0.0) {
+      alpha_max =
+          std::max(alpha_max, group_graph_deg[group] / denominator);
+    }
+  }
+  result.inner_alpha_max = alpha_max;
+  result.inner_condition_bound =
+      alpha_max < 1.0
+          ? (1.0 + alpha_max) / (1.0 - alpha_max)
+          : std::numeric_limits<double>::infinity();
+}
+
+void FillNodeErrors(const Vector& solution, const Vector& reference,
+                    ExperimentResult& result) {
+  // Compute node-level errors without allocating another full-size vector.
+  if (solution.size() != reference.size()) {
+    throw std::invalid_argument("Reference user opinion size mismatch");
+  }
+  if (solution.size() == 0) {
+    result.node_mean_absolute_error = 0.0;
+    result.node_max_absolute_error = 0.0;
+    result.node_relative_l2_error = 0.0;
+    return;
+  }
+
+  double sum_absolute_error = 0.0;
+  double max_absolute_error = 0.0;
+  double squared_error = 0.0;
+  double squared_reference = 0.0;
+  for (Index user = 0; user < solution.size(); ++user) {
+    const double difference = solution[user] - reference[user];
+    const double absolute_error = std::abs(difference);
+    sum_absolute_error += absolute_error;
+    max_absolute_error = std::max(max_absolute_error, absolute_error);
+    squared_error += difference * difference;
+    squared_reference += reference[user] * reference[user];
+  }
+
+  result.node_mean_absolute_error =
+      sum_absolute_error / static_cast<double>(solution.size());
+  result.node_max_absolute_error = max_absolute_error;
+  if (squared_reference > 0.0) {
+    result.node_relative_l2_error =
+        std::sqrt(squared_error / squared_reference);
+  } else {
+    result.node_relative_l2_error =
+        squared_error == 0.0 ? 0.0
+                             : std::numeric_limits<double>::infinity();
+  }
 }
 
 ExperimentInstance BuildInstanceFromFiles(const ExperimentConfig& config) {
@@ -306,6 +396,9 @@ ExperimentInstance BuildInstanceFromFiles(const ExperimentConfig& config) {
                  : EdgeListReader::ReadWeightedGraph(config.group_graph_path,
                                                      n_groups, group_opts))
           : BinaryCsrIO::ReadWeightedGraph(config.group_graph_bin_path, n_groups);
+
+  user_graph.ScaleWeights(config.user_graph_scale);
+  group_graph.ScaleWeights(config.group_graph_scale);
 
   Vector s_u = config.su_path.empty()
                    ? SampleSignedUserOpinions(n_users, config.seed + 3)
@@ -461,6 +554,15 @@ ExperimentResult ExperimentRunner::Run() {
     case Method::FjDynamics:
       result = RunFjDynamicsMethod(instance, config_);
       break;
+    case Method::Bli:
+      result = RunBliMethod(instance, config_);
+      break;
+    case Method::BliSor:
+      result = RunBliSorMethod(instance, config_);
+      break;
+    case Method::PfQe:
+      result = RunPfQeMethod(instance, config_);
+      break;
     default:
       throw std::invalid_argument("Unknown experiment method");
   }
@@ -468,6 +570,19 @@ ExperimentResult ExperimentRunner::Run() {
       config_.use_real_data ? MeanEdgeWeight(instance.user_graph)
                             : ResolveUserGraphWeight(config_);
   FillDiagnostics(instance, result);
+  result.peak_memory_mb = PeakResidentMemoryMb();
+
+  // Load the reference after measuring solver peak memory so that the
+  // evaluation vector does not inflate the algorithm's memory result.
+  if (!config_.reference_xu_path.empty()) {
+    if (result.x_u.size() != instance.bipartite.num_users()) {
+      throw std::runtime_error(
+          "Selected method did not return a complete user opinion vector");
+    }
+    Vector reference = VectorReader::ReadVector(
+        config_.reference_xu_path, instance.bipartite.num_users());
+    FillNodeErrors(result.x_u, reference, result);
+  }
   return result;
 }
 

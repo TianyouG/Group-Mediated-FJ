@@ -26,4 +26,16 @@ ExperimentResult RunDirectMethod(const ExperimentInstance& instance,
 ExperimentResult RunFjDynamicsMethod(const ExperimentInstance& instance,
                                      const ExperimentConfig& config);
 
+// Run the generalized BLI local residual-push baseline.
+ExperimentResult RunBliMethod(const ExperimentInstance& instance,
+                              const ExperimentConfig& config);
+
+// Run the generalized SOR-accelerated BLI baseline.
+ExperimentResult RunBliSorMethod(const ExperimentInstance& instance,
+                                 const ExperimentConfig& config);
+
+// Run the weighted partial rooted-forest quantity estimator.
+ExperimentResult RunPfQeMethod(const ExperimentInstance& instance,
+                               const ExperimentConfig& config);
+
 }  // namespace fj

@@ -25,10 +25,15 @@ struct ExperimentConfig {
   std::string sg_path;
   std::string lambda_u_path;
   std::string lambda_g_path;
+  std::string reference_xu_path;
+  std::string save_xu_path;
+  std::string trace_csv_path;
   bool data_one_indexed = false;
   bool data_ignore_self_loops = true;
   bool user_graph_symmetrize = false;
   bool group_graph_symmetrize = false;
+  double user_graph_scale = 1.0;
+  double group_graph_scale = 1.0;
 
   double alpha = 2.0;
   Index s_min = 1;
@@ -58,12 +63,20 @@ struct ExperimentConfig {
   Index inner_max_iters = 200;
   double inner_tol = 1e-8;
 
+  Index bli_max_updates = 0;
+  double bli_omega = 1.5;
+
+  Index pf_sample_users = 10000;
+  Index pf_sample_edges = 10000;
+  Index pf_forest_samples = 1000;
+  Index pf_max_walk_steps = 1000000;
+
   bool clique_use_weights = false;
   bool schur_use_jacobi = true;
   bool full_system_use_jacobi = true;
   std::string schur_precond_path;
   std::string full_precond_path;
-  Index direct_max_dim = 2000;
+  Index direct_max_dim = 50000;
 
   uint64_t seed = 1;
   std::string tag;

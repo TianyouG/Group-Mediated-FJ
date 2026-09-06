@@ -1,8 +1,16 @@
 #pragma once
 
+#include <vector>
+
 #include "fj/common/types.hpp"
 
 namespace fj {
+
+struct ResidualTracePoint {
+  Index iteration = 0;
+  double relative_residual = 0.0;
+  double seconds = 0.0;
+};
 
 // Statistics returned by linear solvers.
 struct SolverStats {
@@ -16,6 +24,8 @@ struct SolverStats {
   double seconds = 0.0;
   // Convergence flag.
   bool converged = false;
+  // Optional per-iteration residual history.
+  std::vector<ResidualTracePoint> residual_history;
 };
 
 }  // namespace fj

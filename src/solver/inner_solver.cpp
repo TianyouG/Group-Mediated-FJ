@@ -57,6 +57,11 @@ void IterativeInnerSolver::Solve(const Vector& rhs, Vector& sol) const {
   }
   sol.setZero(size_);
   SolverStats stats = solver_->Solve(*A_, rhs, sol, M_);
+  const Index solve_id = stats_.solves + 1;
+  for (const ResidualTracePoint& point : stats.residual_history) {
+    stats_.residual_history.push_back(
+        {solve_id, point.iteration, point.relative_residual, point.seconds});
+  }
   stats_.solves += 1;
   stats_.iterations += stats.iterations;
   stats_.seconds += stats.seconds;

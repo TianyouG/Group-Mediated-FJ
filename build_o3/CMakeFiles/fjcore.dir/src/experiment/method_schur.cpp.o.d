@@ -547,20 +547,22 @@ CMakeFiles/fjcore.dir/src/experiment/method_schur.cpp.o: \
  /mnt/e/GitHub/FJ-group/include/fj/graph/bipartite_csr.hpp \
  /mnt/e/GitHub/FJ-group/include/fj/graph/csr_graph.hpp \
  /mnt/e/GitHub/FJ-group/include/fj/experiment/experiment_result.hpp \
+ /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
  /mnt/e/GitHub/FJ-group/include/fj/common/timer.hpp \
  /usr/include/c++/13/chrono /usr/include/c++/13/bits/chrono.h \
  /usr/include/c++/13/ratio /usr/include/c++/13/ctime \
  /usr/include/c++/13/bits/parse_numbers.h \
- /mnt/e/GitHub/FJ-group/include/fj/io/precond_io.hpp \
- /mnt/e/GitHub/FJ-group/include/fj/metrics/metrics.hpp \
- /mnt/e/GitHub/FJ-group/include/fj/operators/linear_operator.hpp \
- /mnt/e/GitHub/FJ-group/include/fj/operators/agg_operator.hpp \
- /mnt/e/GitHub/FJ-group/include/fj/operators/auu_operator.hpp \
- /mnt/e/GitHub/FJ-group/include/fj/operators/schur_operator.hpp \
+ /mnt/e/GitHub/FJ-group/include/fj/experiment/convergence_trace.hpp \
  /mnt/e/GitHub/FJ-group/include/fj/solver/inner_solver.hpp \
+ /mnt/e/GitHub/FJ-group/include/fj/operators/linear_operator.hpp \
  /mnt/e/GitHub/FJ-group/include/fj/preconditioner/preconditioner.hpp \
  /mnt/e/GitHub/FJ-group/include/fj/solver/linear_solver.hpp \
  /mnt/e/GitHub/FJ-group/include/fj/solver/solver_stats.hpp \
+ /mnt/e/GitHub/FJ-group/include/fj/io/precond_io.hpp \
+ /mnt/e/GitHub/FJ-group/include/fj/metrics/metrics.hpp \
+ /mnt/e/GitHub/FJ-group/include/fj/operators/agg_operator.hpp \
+ /mnt/e/GitHub/FJ-group/include/fj/operators/auu_operator.hpp \
+ /mnt/e/GitHub/FJ-group/include/fj/operators/schur_operator.hpp \
  /mnt/e/GitHub/FJ-group/include/fj/preconditioner/jacobi_preconditioner.hpp \
  /mnt/e/GitHub/FJ-group/include/fj/preconditioner/precond_builder.hpp \
  /mnt/e/GitHub/FJ-group/include/fj/solver/cg_solver.hpp

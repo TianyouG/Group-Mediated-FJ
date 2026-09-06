@@ -40,6 +40,9 @@ class WeightedCsrGraph {
   // Sum of all stored edge weights.
   double total_weight() const;
 
+  // Multiply all edge weights by a nonnegative factor; zero removes all edges.
+  void ScaleWeights(Scalar factor);
+
   // Return degree vector (computed lazily).
   const Vector& degree() const;
 

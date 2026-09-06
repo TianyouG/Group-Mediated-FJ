@@ -8,8 +8,10 @@
 namespace fj {
 
 // Initialize CG solver parameters.
-CgSolver::CgSolver(Index max_iters, double tol)
-    : max_iters_(max_iters), tol_(tol) {}
+CgSolver::CgSolver(Index max_iters, double tol, bool record_history)
+    : max_iters_(max_iters),
+      tol_(tol),
+      record_history_(record_history) {}
 
 SolverStats CgSolver::Solve(const LinearOperator& A, const Vector& b, Vector& x,
                             const Preconditioner* M) const {
@@ -43,6 +45,9 @@ SolverStats CgSolver::Solve(const LinearOperator& A, const Vector& b, Vector& x,
 
   double r_norm = r.norm();
   double rel_res = r_norm / b_norm;
+  if (record_history_) {
+    stats.residual_history.push_back({0, rel_res, timer.ElapsedSeconds()});
+  }
   if (rel_res <= tol_) {
     stats.converged = true;
     stats.iterations = 0;
@@ -67,6 +72,7 @@ SolverStats CgSolver::Solve(const LinearOperator& A, const Vector& b, Vector& x,
     rr_old = r.squaredNorm();
   }
 
+  Index performed_iterations = 0;
   for (Index iter = 0; iter < max_iters_; ++iter) {
     A.Apply(p, Ap);
     double denom = p.dot(Ap);
@@ -82,13 +88,18 @@ SolverStats CgSolver::Solve(const LinearOperator& A, const Vector& b, Vector& x,
 
     x += alpha * p;
     r -= alpha * Ap;
+    performed_iterations = iter + 1;
 
     r_norm = r.norm();
     rel_res = r_norm / b_norm;
+    if (record_history_) {
+      stats.residual_history.push_back(
+          {performed_iterations, rel_res, timer.ElapsedSeconds()});
+    }
 
     if (rel_res <= tol_) {
       stats.converged = true;
-      stats.iterations = iter + 1;
+      stats.iterations = performed_iterations;
       stats.residual_norm = r_norm;
       stats.relative_residual = rel_res;
       stats.seconds = timer.ElapsedSeconds();
@@ -110,7 +121,7 @@ SolverStats CgSolver::Solve(const LinearOperator& A, const Vector& b, Vector& x,
   }
 
   stats.converged = false;
-  stats.iterations = max_iters_;
+  stats.iterations = performed_iterations;
   stats.residual_norm = r_norm;
   stats.relative_residual = rel_res;
   stats.seconds = timer.ElapsedSeconds();

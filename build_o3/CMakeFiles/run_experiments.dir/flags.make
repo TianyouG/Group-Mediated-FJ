@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/mnt/e/GitHub/FJ-group/include -I/mnt/e/GitHub/FJ-group/eigen
 
-CXX_FLAGS = -O3 -DNDEBUG -std=c++17
+CXX_FLAGS = -O3 -DNDEBUG -O3 -DNDEBUG -std=c++17
 

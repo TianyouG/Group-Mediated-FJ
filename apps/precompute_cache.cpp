@@ -1,3 +1,4 @@
+#include <cmath>
 #include <iostream>
 #include <stdexcept>
 #include <string>
@@ -18,8 +19,11 @@ void PrintUsage() {
   std::cout << "Usage: precompute_cache [options]\n"
             << "Options (use --key value or --key=value):\n"
             << "  --bipartite              (string) user-group edge list path\n"
+            << "  --bipartite_bin          (string) existing binary UG CSR path\n"
             << "  --user_graph             (string) user graph edge list path (optional)\n"
+            << "  --user_graph_bin         (string) existing binary user CSR path\n"
             << "  --group_graph            (string) group graph edge list path (optional)\n"
+            << "  --group_graph_bin        (string) existing binary group CSR path\n"
             << "  --out_bipartite_bin       (string) output binary CSR path for UG\n"
             << "  --out_user_graph_bin      (string) output binary CSR path for user graph\n"
             << "  --out_group_graph_bin     (string) output binary CSR path for group graph\n"
@@ -33,6 +37,8 @@ void PrintUsage() {
             << "  --group_symmetrize        (bool)   symmetrize group graph edges\n"
             << "  --lambda_user             (double) user anchoring for preconditioners\n"
             << "  --lambda_group            (double) group anchoring for preconditioners\n"
+            << "  --user_graph_scale        (double) user-edge multiplier for preconditioners\n"
+            << "  --group_graph_scale       (double) group-edge multiplier for preconditioners\n"
             << "  -h, --help                          show this help\n";
 }
 
@@ -82,8 +88,11 @@ int main(int argc, char** argv) {
   bool n_groups_set = false;
 
   std::string bipartite_path;
+  std::string bipartite_bin_path;
   std::string user_graph_path;
+  std::string user_graph_bin_path;
   std::string group_graph_path;
+  std::string group_graph_bin_path;
   std::string out_bipartite_bin;
   std::string out_user_graph_bin;
   std::string out_group_graph_bin;
@@ -97,6 +106,8 @@ int main(int argc, char** argv) {
 
   double lambda_user = 1.0;
   double lambda_group = 1e-4;
+  double user_graph_scale = 1.0;
+  double group_graph_scale = 1.0;
 
   try {
     for (int i = 1; i < argc; ++i) {
@@ -110,10 +121,16 @@ int main(int argc, char** argv) {
         return 0;
       } else if (key == "bipartite") {
         bipartite_path = value;
+      } else if (key == "bipartite_bin") {
+        bipartite_bin_path = value;
       } else if (key == "user_graph") {
         user_graph_path = value;
+      } else if (key == "user_graph_bin") {
+        user_graph_bin_path = value;
       } else if (key == "group_graph") {
         group_graph_path = value;
+      } else if (key == "group_graph_bin") {
+        group_graph_bin_path = value;
       } else if (key == "out_bipartite_bin") {
         out_bipartite_bin = value;
       } else if (key == "out_user_graph_bin") {
@@ -150,6 +167,10 @@ int main(int argc, char** argv) {
         lambda_user = std::stod(value);
       } else if (key == "lambda_group") {
         lambda_group = std::stod(value);
+      } else if (key == "user_graph_scale") {
+        user_graph_scale = std::stod(value);
+      } else if (key == "group_graph_scale") {
+        group_graph_scale = std::stod(value);
       } else {
         throw std::invalid_argument("Unknown option: --" + key);
       }
@@ -160,13 +181,26 @@ int main(int argc, char** argv) {
     return 2;
   }
 
-  if (bipartite_path.empty()) {
-    std::cerr << "Error: --bipartite is required\n";
+  if (bipartite_path.empty() == bipartite_bin_path.empty()) {
+    std::cerr << "Error: provide exactly one of --bipartite or --bipartite_bin\n";
     PrintUsage();
+    return 2;
+  }
+  if (!user_graph_path.empty() && !user_graph_bin_path.empty()) {
+    std::cerr << "Error: provide only one of --user_graph or --user_graph_bin\n";
+    return 2;
+  }
+  if (!group_graph_path.empty() && !group_graph_bin_path.empty()) {
+    std::cerr << "Error: provide only one of --group_graph or --group_graph_bin\n";
     return 2;
   }
   if (lambda_user <= 0.0 || lambda_group < 0.0) {
     std::cerr << "Error: lambda_user must be positive and lambda_group nonnegative\n";
+    return 2;
+  }
+  if (!std::isfinite(user_graph_scale) || user_graph_scale < 0.0 ||
+      !std::isfinite(group_graph_scale) || group_graph_scale < 0.0) {
+    std::cerr << "Error: graph scales must be finite and nonnegative\n";
     return 2;
   }
 
@@ -183,7 +217,11 @@ int main(int argc, char** argv) {
   ug_opts.symmetrize = false;
 
   fj::BipartiteCsr bipartite =
-      fj::EdgeListReader::ReadBipartite(bipartite_path, n_users, n_groups, ug_opts);
+      bipartite_bin_path.empty()
+          ? fj::EdgeListReader::ReadBipartite(bipartite_path, n_users,
+                                              n_groups, ug_opts)
+          : fj::BinaryCsrIO::ReadBipartite(bipartite_bin_path, n_users,
+                                           n_groups);
 
   const fj::Index resolved_users = bipartite.num_users();
   const fj::Index resolved_groups = bipartite.num_groups();
@@ -191,18 +229,24 @@ int main(int argc, char** argv) {
   fj::EdgeListOptions user_opts = ug_opts;
   user_opts.symmetrize = user_symmetrize;
   fj::WeightedCsrGraph user_graph =
-      user_graph_path.empty()
-          ? fj::WeightedCsrGraph(resolved_users)
-          : fj::EdgeListReader::ReadWeightedGraph(user_graph_path, resolved_users,
-                                                  user_opts);
+      user_graph_bin_path.empty()
+          ? (user_graph_path.empty()
+                 ? fj::WeightedCsrGraph(resolved_users)
+                 : fj::EdgeListReader::ReadWeightedGraph(
+                       user_graph_path, resolved_users, user_opts))
+          : fj::BinaryCsrIO::ReadWeightedGraph(user_graph_bin_path,
+                                               resolved_users);
 
   fj::EdgeListOptions group_opts = ug_opts;
   group_opts.symmetrize = group_symmetrize;
   fj::WeightedCsrGraph group_graph =
-      group_graph_path.empty()
-          ? fj::WeightedCsrGraph(resolved_groups)
-          : fj::EdgeListReader::ReadWeightedGraph(group_graph_path, resolved_groups,
-                                                  group_opts);
+      group_graph_bin_path.empty()
+          ? (group_graph_path.empty()
+                 ? fj::WeightedCsrGraph(resolved_groups)
+                 : fj::EdgeListReader::ReadWeightedGraph(
+                       group_graph_path, resolved_groups, group_opts))
+          : fj::BinaryCsrIO::ReadWeightedGraph(group_graph_bin_path,
+                                               resolved_groups);
 
   if (!out_bipartite_bin.empty()) {
     fj::BinaryCsrIO::WriteBipartite(out_bipartite_bin, bipartite);
@@ -215,26 +259,30 @@ int main(int argc, char** argv) {
   }
 
   if (!out_schur_precond.empty() || !out_full_precond.empty()) {
+    user_graph.ScaleWeights(user_graph_scale);
+    group_graph.ScaleWeights(group_graph_scale);
+
     fj::ExperimentInstance instance;
     instance.user_graph = std::move(user_graph);
     instance.group_graph = std::move(group_graph);
     instance.bipartite = std::move(bipartite);
     instance.lambda_u = fj::Vector::Constant(resolved_users, lambda_user);
     instance.lambda_g = fj::Vector::Constant(resolved_groups, lambda_group);
+    const fj::PrecondMetadata metadata = fj::PrecondIO::MakeMetadata(
+        instance.user_graph, instance.group_graph, instance.bipartite,
+        lambda_user, lambda_group, user_graph_scale, group_graph_scale);
 
     if (!out_schur_precond.empty()) {
       fj::Vector diag = fj::BuildSchurJacobiDiagonal(instance);
       fj::PrecondIO::WriteJacobiDiag(out_schur_precond,
                                      fj::PrecondKind::kSchurJacobi, diag,
-                                     resolved_users, resolved_groups,
-                                     lambda_user, lambda_group);
+                                     metadata);
     }
     if (!out_full_precond.empty()) {
       fj::Vector diag = fj::BuildFullJacobiDiagonal(instance);
       fj::PrecondIO::WriteJacobiDiag(out_full_precond,
                                      fj::PrecondKind::kFullJacobi, diag,
-                                     resolved_users, resolved_groups,
-                                     lambda_user, lambda_group);
+                                     metadata);
     }
   }
 

@@ -1,6 +1,9 @@
 #include "fj/experiment/methods.hpp"
 
+#include <utility>
+
 #include "fj/common/timer.hpp"
+#include "fj/experiment/convergence_trace.hpp"
 #include "fj/experiment/residuals.hpp"
 #include "fj/metrics/metrics.hpp"
 #include "fj/operators/agg_operator.hpp"
@@ -33,10 +36,13 @@ ExperimentResult RunFullSystemMethod(const ExperimentInstance& instance,
   if (config.full_system_use_jacobi) {
     Vector diag_full;
     if (!config.full_precond_path.empty()) {
+      const PrecondMetadata metadata = PrecondIO::MakeMetadata(
+          instance.user_graph, instance.group_graph, instance.bipartite,
+          config.lambda_user, config.lambda_group, config.user_graph_scale,
+          config.group_graph_scale);
       diag_full = PrecondIO::ReadJacobiDiag(
           config.full_precond_path, PrecondKind::kFullJacobi,
-          n_users + n_groups, n_users, n_groups, config.lambda_user,
-          config.lambda_group);
+          n_users + n_groups, metadata);
     } else {
       diag_full = BuildFullJacobiDiagonal(instance);
     }
@@ -47,7 +53,8 @@ ExperimentResult RunFullSystemMethod(const ExperimentInstance& instance,
   }
 
   // Run CG on the full operator.
-  CgSolver cg(config.outer_max_iters, config.outer_tol);
+  CgSolver cg(config.outer_max_iters, config.outer_tol,
+              !config.trace_csv_path.empty());
   Vector x_full;
   Timer timer;
   SolverStats stats = cg.Solve(full, b_full, x_full, precond);
@@ -66,6 +73,8 @@ ExperimentResult RunFullSystemMethod(const ExperimentInstance& instance,
   result.internal_conflict = InternalConflict(x_u, instance.s_u);
   result.polarization = Polarization(x_u);
   result.controversy = Controversy(x_u);
+  AppendSolverTrace("outer", 0, stats, result);
+  result.x_u = std::move(x_u);
   return result;
 }
 

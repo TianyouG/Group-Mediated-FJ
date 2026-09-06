@@ -10,6 +10,9 @@ enum class Method {
   Clique = 2,
   Direct = 3,
   FjDynamics = 4,
+  Bli = 5,
+  BliSor = 6,
+  PfQe = 7,
 };
 
 // Parse a method name from string.
